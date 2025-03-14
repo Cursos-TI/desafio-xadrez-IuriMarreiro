@@ -1,32 +1,90 @@
 #include <stdio.h>
 
-// Desafio de Xadrez - MateCheck
-// Este código inicial serve como base para o desenvolvimento do sistema de movimentação das peças de xadrez.
-// O objetivo é utilizar estruturas de repetição e funções para determinar os limites de movimentação dentro do jogo.
+int main () {
 
-int main() {
-    // Nível Novato - Movimentação das Peças
-    // Sugestão: Declare variáveis constantes para representar o número de casas que cada peça pode se mover.
+// Iniciando a codificação dos movimentos das peças de xadrez
+// Iniciei com um menu simples para o programa ficar mais robusto
 
-    // Implementação de Movimentação do Bispo
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação do Bispo em diagonal.
+    printf("*** GAME DE XADREZ ***\n\n");
 
-    // Implementação de Movimentação da Torre
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Torre para a direita.
+    int torre, bispo, rainha;
+    char direcao[50], escolha;
 
-    // Implementação de Movimentação da Rainha
-    // Sugestão: Utilize uma estrutura de repetição para simular a movimentação da Rainha para a esquerda.
+// Menu para o usuario escolher qual peça utilizar
 
-    // Nível Aventureiro - Movimentação do Cavalo
-    // Sugestão: Utilize loops aninhados para simular a movimentação do Cavalo em L.
-    // Um loop pode representar a movimentação horizontal e outro vertical.
+    printf("Escolha uma peça:\n");
+    printf("T. torre\n");
+    printf("B. bispo\n");
+    printf("R. rainha\n");
+    scanf("%c", &escolha);
 
-    // Nível Mestre - Funções Recursivas e Loops Aninhados
-    // Sugestão: Substitua as movimentações das peças por funções recursivas.
-    // Exemplo: Crie uma função recursiva para o movimento do Bispo.
+// Indiquei letras para ser lidas no menu
 
-    // Sugestão: Implemente a movimentação do Cavalo utilizando loops com variáveis múltiplas e condições avançadas.
-    // Inclua o uso de continue e break dentro dos loops.
+    switch (escolha)
+    {
+    case 'T':
+    case 't':
 
+// Usuario poderá escolher o caminho da peça
+
+    printf("Escolha a direção da torre:\n");
+    scanf("%s", &direcao);
+
+// loop for para movimentar a torre
+
+            for (torre = 2; torre <= 5; torre++)
+    {
+            printf("%s\n", direcao);
+    }
+    
+// movimento da torre será de 5 casas
+
+        break;
+
+    case 'B':
+    case 'b':
+
+// Escolher o movimento do bispo poderá ser uma frase
+
+    bispo = 2;
+    printf("Escolha a direção do bispo\n");
+    while(getchar() != '\n');
+    fgets(direcao, sizeof(direcao), stdin);
+
+// loop while para movimentar o bispo
+
+        while (bispo <= 5)
+        {
+            printf("%s", direcao);
+                bispo++;
+        }
+
+// movimento do bispo será de 5 casas
+
+        break;
+         
+    case 'R':
+    case 'r':
+
+// o movimento da rainha tambem será uma frase
+
+        rainha = 2;
+        printf("Escolha a direção da rainha \n");
+        while(getchar() != '\n');
+        fgets(direcao, sizeof(direcao), stdin);
+
+// loop do-while para movimentar a rainha
+
+        do{
+            printf("%s", direcao);
+            rainha++;
+
+        } while (rainha <= 8);
+
+// movimento da rainha será de 8 casas
+
+        break;
+    }
+   
     return 0;
 }
